@@ -1,4 +1,4 @@
-/* Copyright (c) 2008-2014, 2016, 2019 The Linux Foundation. All rights reserved.
+/* Copyright (c) 2008-2014, 2016, 2019, 2021 The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -152,6 +152,9 @@ void diagmem_setsize(int pool_idx, int itemsize, int poolsize)
 	}
 
 	diag_mempools[pool_idx].itemsize = itemsize;
+	if (diag_mempools[pool_idx].pool)
+		diag_mempools[pool_idx].pool->pool_data =
+			(void *)(uintptr_t)itemsize;
 	diag_mempools[pool_idx].poolsize = poolsize;
 	pr_debug("diag: Mempool %s sizes: itemsize %d poolsize %d\n",
 		 diag_mempools[pool_idx].name, diag_mempools[pool_idx].itemsize,
