@@ -29,31 +29,31 @@
 #define __VOS_API_H
 
 /**=========================================================================
-  
-  \file  vos_Api.h
-  
-  \brief virtual Operating System Services (vOSS) API
-               
-   Header file that inludes all the vOSS API definitions.
-  
-  
-  ========================================================================*/
- /*=========================================================================== 
 
-                       EDIT HISTORY FOR FILE 
-   
-   
-  This section contains comments describing changes made to the module. 
-  Notice that changes are listed in reverse chronological order. 
-   
-   
-  $Header:$ $DateTime: $ $Author: $ 
-   
-   
-  when        who    what, where, why 
+  \file  vos_Api.h
+
+  \brief virtual Operating System Services (vOSS) API
+
+   Header file that inludes all the vOSS API definitions.
+
+
+  ========================================================================*/
+ /*===========================================================================
+
+                       EDIT HISTORY FOR FILE
+
+
+  This section contains comments describing changes made to the module.
+  Notice that changes are listed in reverse chronological order.
+
+
+  $Header:$ $DateTime: $ $Author: $
+
+
+  when        who    what, where, why
   --------    ---    --------------------------------------------------------
   06/23/08    hba     Added vos_preOpen()
-  05/18/08    lac     Created module. 
+  05/18/08    lac     Created module.
 ===========================================================================*/
 
 /*--------------------------------------------------------------------------
@@ -623,7 +623,7 @@ int vos_process_bt_profile(bool bt_enabled, bool bt_adv,
 static inline int
 vos_process_bt_profile(bool bt_enabled, bool bt_adv,
 		       bool ble_enabled, bool bt_a2dp,
-		       bool bt_sco);
+		       bool bt_sco)
 {
 	return -ENOTSUPP;
 }
